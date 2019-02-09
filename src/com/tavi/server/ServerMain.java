@@ -1,7 +1,7 @@
 package com.tavi.server;
 
 public class ServerMain {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Server server = new Server(4444);
     }
 }

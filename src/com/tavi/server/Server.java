@@ -17,6 +17,8 @@ public class Server{
             while(true){
                 this.socket=this.serverSocket.accept();
                 System.out.println("Received connection from" +this.socket.getInetAddress().toString());
+                ClientConnectionHandler handler=new ClientConnectionHandler(this.socket,this);
+                handler.run();
             }
         } catch (IOException e) {
             e.printStackTrace();
