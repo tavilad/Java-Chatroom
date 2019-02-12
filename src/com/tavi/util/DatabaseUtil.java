@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 import model.User;
 
@@ -39,5 +40,17 @@ public class DatabaseUtil {
 		for(User user:users){
 			System.out.println("User: "+user.getIdusers()+" "+user.getUsername()+" "+user.getPassword());
 		}
+	}
+	
+	public boolean loginUser(User user){
+		Query query=entityManager.createNativeQuery("Select * from ProiectTPD.users WHERE ProiectTPD.users.username=?1", User.class);
+		query.setParameter(1, user.getUsername());
+		
+		List<User> users=query.getResultList();
+		if(users==null||users.isEmpty()){
+			return false;
+		}
+		return true;
+		
 	}
 }

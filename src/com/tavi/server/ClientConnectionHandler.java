@@ -19,7 +19,7 @@ public class ClientConnectionHandler implements Runnable {
         this.outputStream = this.clientSocket.getOutputStream();
     }
     
-public void run() {
+    public void run() {
 
     }
 }

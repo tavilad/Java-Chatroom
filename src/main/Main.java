@@ -10,9 +10,9 @@ public class Main {
 		// TODO Auto-generated method stub
 		DatabaseUtil dbutil=new DatabaseUtil();
 		User user=new User();
-		user.setIdusers(1);
-		user.setUsername("tavilad");
-		user.setPassword("anamaria");
+		user.setIdusers(2);
+		user.setUsername("yrd");
+		user.setPassword("test");
 		dbutil.setup();
 		dbutil.startTransaction();
 		dbutil.saveUser(user);
